@@ -7,6 +7,8 @@ def get_list_info(lst):
     # Здесь нужно написать код
     return min_elem, max_elem, sum_list, average
 
+# Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
+
 
 data = [
     [1, 2, 3, 4, 5, 6, 7],
@@ -21,4 +23,6 @@ test_data = [
 
 
 for i, d in enumerate(data):
-    assert get_list_info(d) == test_data[i]
+    assert get_list_info(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')

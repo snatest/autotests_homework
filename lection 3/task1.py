@@ -5,6 +5,8 @@ def modification(lst):
     # Здесь нужно написать код
     return lst
 
+# Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
+
 
 data = [
     [1, 2, 3],
@@ -18,4 +20,6 @@ test_data = [
 
 
 for i, d in enumerate(data):
-    assert modification(d) == test_data[i]
+    assert modification(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')
