@@ -4,7 +4,7 @@
 
 from statistics import mean
 def get_list_info(lst):
-
+    # Здесь пишем код
     return min_elem, max_elem, sum_list, average
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
