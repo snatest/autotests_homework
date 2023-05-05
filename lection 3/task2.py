@@ -2,9 +2,12 @@
 # минимальный и максимальный элементы списка;
 # сумму и среднее арифметическое с округлением до 2 знаков после запятой;
 
-
+from statistics import mean
 def get_list_info(lst):
-    # Здесь нужно написать код
+    max_elem = max(lst)
+    min_elem = min(lst)
+    sum_list = round(sum(lst), 2)
+    average = round(mean(lst), 2)
     return min_elem, max_elem, sum_list, average
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
