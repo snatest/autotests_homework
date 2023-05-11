@@ -9,8 +9,8 @@
 
 def multiplication_chain(num):
     count_multy = 0
-    obj = len(str(num))  # количество элементов тестового набора
-    selection = str(num)  # число превращаем в итерируемый объект
+    selection = str(num)
+    obj = len(selection)  # количество элементов тестового набора
     while obj != 1:  # пока не останется один элемент
         product = 1  # сбрасываем произведение для каждой итерации
         for value in selection:
