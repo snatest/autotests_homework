@@ -7,9 +7,8 @@
 
 def flatten_and_sort(array):
     result_list = []
-    for obj in array:
-        for value in obj:
-            result_list.append(value)
+    for obj, value in enumerate(array):
+        result_list += value
     result_list = sorted(result_list)
     return result_list
 
