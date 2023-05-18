@@ -25,9 +25,13 @@ def everything_for_your_cat(cats_data):
         owner = ' '.join(value[-2:])
         if dictionary.get(owner) is not None:
             last_pet = dictionary.get(owner)
-            dictionary.update({owner: last_pet + '; ' + value[0] + ', ' + str(value[1])})
+            dictionary.update({
+                owner: last_pet + '; ' + value[0] + ', ' + str(value[1])
+            })
         else:
-            dictionary.update({' '.join(value[-2:]): value[0] + ', ' + str(value[1])})
+            dictionary.update({
+                ' '.join(value[-2:]): value[0] + ', ' + str(value[1])
+            })
     for obj in dictionary:
         our_str += obj + ': ' + dictionary.get(obj) + '\n'
     return our_str
