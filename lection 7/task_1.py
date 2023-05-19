@@ -21,7 +21,7 @@ data = [Segment((2, 3), (4, 5)).length,
         Segment((-2, -3), (4, 5)).x_axis_intersection,
         Segment((-2, -3), (-4, -2)).x_axis_intersection,
         Segment((0, -3), (4, 5)).x_axis_intersection,
-        Segment((-2, 3), (4, 5)).y_axis_intersection,
+        Segment((2, 3), (4, 5)).y_axis_intersection,
         Segment((-2, -3), (4, 5)).y_axis_intersection,
         Segment((-2, 3), (4, 0)).y_axis_intersection
         ]
