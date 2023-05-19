@@ -21,7 +21,7 @@ def to_roman(val):
     for idx, value in enumerate(reversed(str(val))):
         digit = int(value) * 10 ** idx
         if roman_digits.get(digit) is not None:
-            roman_str = str(roman_digits.get(digit)) + roman_str
+            roman_str = roman_digits.get(digit) + roman_str
     return roman_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
