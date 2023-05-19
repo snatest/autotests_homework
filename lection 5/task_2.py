@@ -8,7 +8,8 @@
 def repeats(our_str):
     new_list = {}
     for idx, let in enumerate(our_str):
-        new_list[let + '_' + str(our_str.count(let, 0, idx + 1))] = let
+        obj = f'{let}_{str(our_str.count(let, 0, idx + 1))}'
+        new_list[obj] = let
     new_str = ''.join(new_list)
     return new_str
 
