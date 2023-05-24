@@ -7,7 +7,7 @@
 # Например (Ввод --> Вывод) :
 # Segment((2, 3), (4, 5)).length() --> 2.83
 # Segment((-2, -3), (4, 5)).x_axis_intersection() --> True
-# Segment((-2, -3), (4, -5)).y_axis_intersection() --> False
+# Segment((-2, -3), (-4, -5)).y_axis_intersection() --> False
 
 # Здесь пишем код
 
