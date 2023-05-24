@@ -13,10 +13,8 @@ string = 'Hello'
 
 def global_changes():
 
-    global number
+    global number, string
     number = 5
-
-    global string
     string = 'Hello, dear friend'
 
     return number, string
