@@ -8,7 +8,27 @@
 # RomanNums('MMMCCLXIII').from_roman() --> 3263
 # RomanNums('CMXCIX').is_palindrome() --> True
 
-# Здесь пишем код
+class RomanNums:
+
+    def __init__(self, rom_num):
+        self.rom_num = rom_num
+
+    def from_roman(self):
+
+        rom_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        number = 0
+        for char in range(len(self.rom_num) - 1):
+            if rom_dict[self.rom_num[char]] < rom_dict[self.rom_num[char + 1]]:
+                number = number - rom_dict[self.rom_num[char]]
+            elif rom_dict[self.rom_num[char]] >= rom_dict[self.rom_num[char + 1]]:
+                number = number + rom_dict[self.rom_num[char]]
+        number = number + rom_dict[self.rom_num[len(self.rom_num) - 1]]
+        return number
+
+    def is_palindrome(self):
+        number = str(self.from_roman())
+        rebmun = number[::-1]
+        return True if number == rebmun else False
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
