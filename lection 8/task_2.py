@@ -20,27 +20,14 @@ class Trigon:
 
     def __init__(self, *args):
         self.args = args
-        zero = 0
-        if len(args) == 3:
-            for obj in args:
-                if not isinstance(obj, int):
-                    raise TypeError('Стороны должны быть числами')
-                elif obj <= 0:
-                    raise ValueError('Стороны должны быть положительными')
-            if (not (not (args[1] + args[2] > args[0])
-                     or not (args[0] + args[1] > args[2])
-                     or not (args[0] + args[2] > args[1])
-                     or not (args[0] > 0)) and args[1] > 0 and args[2] > 0):
-                raise Exception('Не треугольник')
-        else:
-            if len(args) == 1:
-                raise TypeError(0)
-            else:
-                raise IndexError(f'Передано {len(args)} аргументов, а ожидается 3')
-
-
-a = Trigon((3, 4, 5))
-print(a)
+        if len(args) != 3:
+            raise IndexError(f'Передано {len(args)} аргументов, а ожидается 3')
+        elif not isinstance(args[0], int) or not isinstance(args[1], int) or not isinstance(args[2], int):
+            raise TypeError('Стороны должны быть числами')
+        elif args[0] < 1 or args[1] < 1 and args[2] < 1:
+            raise ValueError('Стороны должны быть положительными')
+        elif (args[1] + args[2] < args[0]) or (args[0] + args[1] < args[2]) or (args[0] + args[2] < args[1]):
+            raise Exception('Не треугольник')
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
