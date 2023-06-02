@@ -16,19 +16,17 @@ class RomanNums:
     def from_roman(self):
 
         rom_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        number = 0
+        number = rom_dict[self.rom_num[len(self.rom_num) - 1]]
         for char in range(len(self.rom_num) - 1):
             if rom_dict[self.rom_num[char]] < rom_dict[self.rom_num[char + 1]]:
-                number = number - rom_dict[self.rom_num[char]]
+                number -= rom_dict[self.rom_num[char]]
             elif rom_dict[self.rom_num[char]] >= rom_dict[self.rom_num[char + 1]]:
-                number = number + rom_dict[self.rom_num[char]]
-        number = number + rom_dict[self.rom_num[len(self.rom_num) - 1]]
+                number += rom_dict[self.rom_num[char]]
         return number
 
     def is_palindrome(self):
         number = str(self.from_roman())
-        rebmun = number[::-1]
-        return True if number == rebmun else False
+        return True if number == number[::-1] else False
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 

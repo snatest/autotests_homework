@@ -38,16 +38,11 @@ class PersonInfo:
     def new_salary(self):
         joined_dep = ''.join(self.dep)
         counter_dict = {}.fromkeys(joined_dep, 0)
-        retry_count = 3
         values = []
-        k = 1337
         for char in joined_dep:
             counter_dict[char] += 1
-        for count in range(retry_count):
-            max_value = max(counter_dict.values())
-            max_value_key = list(counter_dict.keys())[list(counter_dict.values()).index(max_value)]
-            values.append(counter_dict.pop(max_value_key))
-        return k * self.age * sum(values)
+        values = sorted(counter_dict.values())
+        return 1337 * self.age * sum(values[-3:])
 
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
