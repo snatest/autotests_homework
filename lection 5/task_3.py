@@ -19,7 +19,17 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
+    our_str = ''
+    dictionary = {}
+    for value in cats_data:
+        owner = ' '.join(value[-2:])
+        pet = f' {value[0]}, {str(value[1])}'
+        if dictionary.get(owner) is None:
+            dictionary[owner] = pet
+        else:
+            dictionary[owner] += f';{pet}'
+    for obj in dictionary:
+        our_str += f'{obj}:{dictionary.get(obj)}\n'
     return our_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

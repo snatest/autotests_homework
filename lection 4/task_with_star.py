@@ -12,7 +12,23 @@
 # 4974 --> 7974
 
 def max_division_by_3(num):
-    # Здесь нужно написать код
+    new_num2 = []
+    new_num = []
+    if num == 0 and len(str(num)) == 1:
+        new_num2.append(0)
+    while num > 0:
+        new_num2.append(num % 10)
+        num //= 10
+    new_num2 = list(reversed(new_num2))
+    for ind, value in enumerate(new_num2):
+        n = 9
+        while n != value:
+            lst = new_num2[:ind] + new_num2[ind+1:]
+            lst.insert(ind, n)
+            if sum(lst) % 3 == 0:
+                new_num = int(''.join(map(str, lst)))
+                return new_num  # не нашел другого способа выйти из двух циклов :(
+            n -= 1
     return new_num
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

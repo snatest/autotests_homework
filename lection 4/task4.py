@@ -8,7 +8,16 @@
 # 4 --> 0 (4 уже одна цифра, а значит мы проделали 0 итераций)
 
 def multiplication_chain(num):
-    # Здесь нужно написать код
+    count_multy = 0
+    selection = str(num)
+    obj = len(selection)  # количество элементов тестового набора
+    while obj != 1:  # пока не останется один элемент
+        product = 1  # сбрасываем произведение для каждой итерации
+        for value in selection:
+            product *= int(value)  # ищем произведение чисел тестового набора
+            selection = str(product)  # заменяем итерируемый объект найденным проиведением для всех чисел набора
+            obj = len(selection)  # обновляем количество объектов
+        count_multy += 1
     return count_multy
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

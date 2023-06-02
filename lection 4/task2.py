@@ -6,7 +6,10 @@
 
 
 def flatten_and_sort(array):
-    # Здесь нужно написать код
+    result_list = []
+    for obj, value in enumerate(array):
+        result_list += value
+    result_list = sorted(result_list)
     return result_list
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

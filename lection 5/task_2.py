@@ -5,9 +5,12 @@
 # Например (Ввод --> Вывод):
 # 'letter' --> l_1e_1t_1t_2e_2_r_1
 
-
 def repeats(our_str):
-    # Здесь нужно написать код
+    new_list = {}
+    for idx, let in enumerate(our_str):
+        obj = f'{let}_{str(our_str.count(let, 0, idx + 1))}'
+        new_list[obj] = let
+    new_str = ''.join(new_list)
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
