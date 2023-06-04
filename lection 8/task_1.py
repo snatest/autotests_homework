@@ -18,10 +18,9 @@ import unittest  # Не удалять
 
 
 def treatment_sum(our_tuple):
-    res = 0
+    if len(our_tuple) > 2:
+        raise Exception('Много данных')
     try:
-        if len(our_tuple) > 2:
-            raise Exception('Много данных')
         res = our_tuple[0] + our_tuple[1]
     except ValueError:
         res = 'Нельзя сложить эти данные'

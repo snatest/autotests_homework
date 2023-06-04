@@ -19,8 +19,8 @@ import unittest  # Не удалять
 class Trigon:
 
     def __init__(self, *args):
-        self.args = args
         if len(args) != 3:
+            self.args = args
             raise IndexError(f'Передано {len(args)} аргументов, а ожидается 3')
         elif not isinstance(args[0], int) or not isinstance(args[1], int) or not isinstance(args[2], int):
             raise TypeError('Стороны должны быть числами')
