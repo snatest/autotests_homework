@@ -33,4 +33,23 @@
 
 import datetime
 
-# Здесь пишем код
+
+def make_dec(file_log='log.txt'):
+    def func_log(func):
+        def wrapper_func():
+            log_datetime = datetime.datetime.now().strftime('%d.%m %H:%M:%S')
+            wrapper_func.__name__ = func.__name__
+            with open(file_log, 'a', encoding='utf-8') as flog:
+                flog.write(f'{wrapper_func.__name__} вызвана {log_datetime}\n')
+        return wrapper_func
+
+    return func_log
+
+
+@make_dec('func2.txt')
+def func2():
+    return
+
+
+func2()
+help(func2)
