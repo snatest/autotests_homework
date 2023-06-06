@@ -2,8 +2,12 @@
 # Он содержит текст, в словах которого есть цифры.
 # Необходимо удалить все цифры и записать получившийся текст в файл test_file/task1_answer.txt
 
+import re
 
-# Здесь пишем код
+with open("test_file/task1_data.txt", 'r', encoding='utf-8') as origin:
+    with open("test_file/task1_answer.txt", 'w', encoding='utf-8') as result:
+        result.write(re.sub(r'\d', '', ''.join(origin.readlines())))
+
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
