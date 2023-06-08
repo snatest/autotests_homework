@@ -15,3 +15,27 @@ def all_division(*arg1):
     for i in arg1[1:]:
         division /= i
     return division
+
+
+@pytest.mark.smoke
+def test_1():
+    assert all_division(-1, 1) == -1, 'чет то'
+
+
+def test_2():
+    with pytest.raises(ZeroDivisionError):
+        all_division(1, 0)
+
+
+@pytest.mark.smoke
+def test_3():
+    assert all_division(2, 1) == 3, 'Неправильный ОР'
+
+
+@pytest.mark.skip('Скип по задаче')
+def test_31():
+    assert all_division(100, 10) == 10, 'ok'
+
+
+def test_5():
+    assert all_division(103.3, 2) == 51.65, 'ok'
