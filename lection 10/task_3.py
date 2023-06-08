@@ -12,5 +12,12 @@ def all_division(*arg1):
     return division
 
 
+@pytest.mark.parametrize('x, y, res',
+                         [
+                             pytest.param(5, 2, 2.5, marks=pytest.mark.smoke),
+                             pytest.param(1, 1, 1, marks=pytest.mark.skip('skipped by task ..'))
+                         ])
+def test_31(x, y, res):
+    assert all_division(x, y) == res
 
 
