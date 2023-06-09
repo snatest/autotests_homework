@@ -32,24 +32,44 @@
 
 
 import datetime
+import time
 
-
-def make_dec(file_log='log.txt'):
-    def func_log(func):
+def func_log(file_log='log.txt'):
+    def obertka(func):
         def wrapper_func():
+            func()
             log_datetime = datetime.datetime.now().strftime('%d.%m %H:%M:%S')
             wrapper_func.__name__ = func.__name__
+            wrapper_func.__doc__ = func.__doc__
             with open(file_log, 'a', encoding='utf-8') as flog:
                 flog.write(f'{wrapper_func.__name__} вызвана {log_datetime}\n')
         return wrapper_func
 
-    return func_log
+    return obertka
 
 
-@make_dec('func2.txt')
+#@func_log()
 def func2():
+    """ тут описание 1"""
+    print('зовем без декоратора')
     return
 
 
 func2()
+help(func2)
+
+
+@func_log('func3.txt')
+def func2():
+    """ тут описание 2"""
+    time.sleep(1)
+    return print('зовем с декоратором')
+
+
+func2()
+func2()
+func2()
+func2()
+func2()
+
 help(func2)

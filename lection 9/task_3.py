@@ -8,13 +8,12 @@ with open("test_file/task_3.txt", 'r') as price_doc:
     prices_list = price_doc.readlines()
     prices_each = 0
     prices_sum = []
-    for idx, line in enumerate(prices_list):
-        line = line.replace('\n', '')
-        if line == '':
+    for line in prices_list:
+        if line == '\n':
             prices_sum.append(prices_each)
             prices_each = 0
-            continue
-        prices_each += int(line)
+        else:
+            prices_each += int(line)
     three_most_expensive_purchases = sum(sorted(prices_sum)[-3:])
 
 assert three_most_expensive_purchases == 202346
