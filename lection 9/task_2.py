@@ -33,7 +33,6 @@
 
 import datetime
 import time
-import random
 
 def func_log(file_log='log.txt'):
     def obertka(func):
